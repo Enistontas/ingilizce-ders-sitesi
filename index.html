@@ -498,7 +498,13 @@
 
     <div class="video-wrapper">
       <video controls preload="metadata" poster="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop">
-        <source src="tanitim.mp4" type="video/mp4">
+        <!--
+          Video kaynağı için burayı güncelle:
+          - Aynı klasörde: "tanitim.mp4"
+          - Alt klasörde: "videos/tanitim.mp4"
+          - İstersen tam URL: "https://site.com/video.mp4"
+        -->
+        <source id="introVideoSource" src="tanitim.mp4" type="video/mp4">
         Tarayıcınız video oynatmayı desteklemiyor.
       </video>
     </div>
@@ -536,6 +542,13 @@
   </footer>
 
   <script>
+    // Video yolunu buradan ayarlayın (relative path veya tam URL olabilir).
+    const VIDEO_URL = "C:\Users\enist\OneDrive\Masaüstü\Tuğba\WhatsApp Video 2026-05-24 at 22.31.42.mp4";
+    const introVideoSource = document.getElementById("introVideoSource");
+    if (introVideoSource && VIDEO_URL) {
+      introVideoSource.src = VIDEO_URL;
+    }
+
     function showMessage(){
       alert("Başvurunuz için teşekkürler! En kısa sürede dönüş yapılacaktır.");
     }

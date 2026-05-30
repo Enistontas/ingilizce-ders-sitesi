@@ -504,7 +504,7 @@
           - Alt klasörde: "videos/tanitim.mp4"
           - İstersen tam URL: "https://site.com/video.mp4"
         -->
-        <source id="introVideoSource" src="tanitim.mp4" type="video/mp4">
+        <source id="introVideoSource" src="WhatsApp Video 2026-05-24 at 22.31.42.mp4" type="video/mp4">
         Tarayıcınız video oynatmayı desteklemiyor.
       </video>
     </div>
@@ -542,11 +542,14 @@
   </footer>
 
   <script>
-    // Video yolunu buradan ayarlayın (relative path veya tam URL olabilir).
-    const VIDEO_URL = "C:\Users\enist\OneDrive\Masaüstü\Tuğba\WhatsApp Video 2026-05-24 at 22.31.42.mp4";
+    // Video: index.html ile AYNI klasördeki dosya adını yazın (C:\... yazmayın).
+    const VIDEO_URL = "WhatsApp Video 2026-05-24 at 22.31.42.mp4";
+    const introVideo = document.querySelector("#video video");
     const introVideoSource = document.getElementById("introVideoSource");
-    if (introVideoSource && VIDEO_URL) {
-      introVideoSource.src = VIDEO_URL;
+    if (introVideo && VIDEO_URL) {
+      const videoPath = encodeURI(VIDEO_URL);
+      if (introVideoSource) introVideoSource.src = videoPath;
+      introVideo.load();
     }
 
     function showMessage(){
